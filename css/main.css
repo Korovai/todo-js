@@ -1,0 +1,713 @@
+/* ================================================== /*
+ * Typography
+/* ================================================== */
+@font-face {
+  font-family: 'Gilroy_Light';
+  src: url('../fonts/Gilroy/Gilroy_Light.svg#Gilroy_Light') format('svg'),
+       url('../fonts/Gilroy/Gilroy_Light.ttf') format('truetype'),
+       url('../fonts/Gilroy/Gilroy_Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy_Light';
+  src: url('../fonts/Gilroy/Gilroy_Light.eot');
+  src: url('../fonts/Gilroy/Gilroy_Light.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Gilroy/Gilroy_Light.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy_Bold';
+  src: url('../fonts/Gilroy/Gilroy_Bold.svg#Gilroy_Bold') format('svg'),
+       url('../fonts/Gilroy/Gilroy_Bold.ttf') format('truetype'),
+       url('../fonts/Gilroy/Gilroy_Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy_Bold';
+  src: url('../fonts/Gilroy/Gilroy_Bold.eot');
+  src: url('../fonts/Gilroy/Gilroy_Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Gilroy/Gilroy_Bold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy_ExtraBold';
+  src: url('../fonts/Gilroy/Gilroy_ExtraBold.svg#Gilroy_ExtraBold') format('svg'),
+       url('../fonts/Gilroy/Gilroy_ExtraBold.ttf') format('truetype'),
+       url('../fonts/Gilroy/Gilroy_ExtraBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy_ExtraBold';
+  src: url('../fonts/Gilroy/Gilroy_ExtraBold.eot');
+  src: url('../fonts/Gilroy/Gilroy_ExtraBold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Gilroy/Gilroy_ExtraBold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat_Regular';
+  src: url('../fonts/Montserrat/Montserrat_Regular.svg#Montserrat_Regular') format('svg'),
+       url('../fonts/Montserrat/Montserrat_Regular.ttf') format('truetype'),
+       url('../fonts/Montserrat/Montserrat_Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat_Regular';
+  src: url('../fonts/Montserrat/Montserrat_Regular.eot');
+  src: url('../fonts/Montserrat/Montserrat_Regular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Montserrat/Montserrat_Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat_Medium';
+  src: url('../fonts/Montserrat/Montserrat_Medium.svg#Montserrat_Medium') format('svg'),
+       url('../fonts/Montserrat/Montserrat_Medium.ttf') format('truetype'),
+       url('../fonts/Montserrat/Montserrat_Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat_Medium';
+  src: url('../fonts/Montserrat/Montserrat_Medium.eot');
+  src: url('../fonts/Montserrat/Montserrat_Medium.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Montserrat/Montserrat_Medium.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat_Bold';
+  src: url('../fonts/Montserrat/Montserrat_Bold.svg#Montserrat_Bold') format('svg'),
+       url('../fonts/Montserrat/Montserrat_Bold.ttf') format('truetype'),
+       url('../fonts/Montserrat/Montserrat_Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat_Bold';
+  src: url('../fonts/Montserrat/Montserrat_Bold.eot');
+  src: url('../fonts/Montserrat/Montserrat_Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Montserrat/Montserrat_Bold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ================================================== /*
+ * COMMON STYLES
+/* ================================================== */
+body {
+  background: #d7dee4;
+  font-size: 16px;
+  font-family: Montserrat_Regular;
+  color: #606060;
+}
+
+/* ================================================== /*
+ * HEADER
+/* ================================================== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 60%;
+  height: 100px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.wrLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  border: 1px solid #edf0f5;
+  text-align: center;
+  font-size: 32px;
+  font-family: Gilroy_ExtraBold;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.wrSearch {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 80%;
+  height: 100%;
+  border: 1px solid #edf0f5;
+  padding: 0 15px
+}
+
+.wrSearch i.fa-search { 
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translate(0, -50%);
+  padding: 15px;
+  cursor: pointer;
+}
+
+.wrSearch i.fa-search {
+  color: #b6c8d2;
+}
+
+.search {
+  width: 100%;
+  height: 40px;
+  border: none;
+  padding: 0 15px 0 45px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 1px 10px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 1px 10px -3px rgba(0,0,0,0.75);
+  box-shadow: 0px 1px 10px -3px rgba(0,0,0,0.75);
+}
+
+/* ================================================== /*
+ * CONTENT
+/* ================================================== */
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 60%;
+  margin: 0 auto;
+  user-select: none;
+}
+
+/* -------------------------------------------------- /*
+ * Left Bar
+/* -------------------------------------------------- */
+.leftBar {
+  max-width: 256px;
+  width: 20%;
+  background: #fff;
+}
+
+.btnFilter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: none;
+  border-top: 1px solid #edf0f5;
+  border-bottom: 1px solid #edf0f5;
+  padding: 30px 15px;
+  background: #fff;
+  color: #606060;
+}
+
+.btnFilter i {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.btnFilter:hover,
+.activeBtnFilter {
+  background: #69e5da;
+  font-family: Montserrat_Medium;
+  color: #fff;
+}
+
+/* -------------------------------------------------- /*
+ * Body Content
+/* -------------------------------------------------- */
+.bodyContent {
+  display: flex;
+  flex-direction: column;
+  /*background: #fff;*/
+  background: #edf0f5;
+}
+
+/* -------------------------------------------------- /*
+ * Start Screen
+/* -------------------------------------------------- */
+.startScreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 50px 0;
+  display: none;
+}
+
+.startScreen img {
+  width: 250px;
+  height: auto;
+}
+
+.startGreeting {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.startGreeting span {
+  font-family: Montserrat_Bold;
+}
+
+.btnStartAddTask {
+  border: none;
+  border-radius: 25px;
+  padding: 15px 30px;
+  background: #69e5da;
+  font-family: Montserrat_Medium;
+  color: #fff;
+}
+
+.btnStartAddTask:hover {
+  -webkit-box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.75);
+}
+
+.btnStartAddTask i {
+  margin-right: 15px;
+}
+/* -------------------------------------------------- /*
+ * Start Screen The End
+/* -------------------------------------------------- */
+
+/* -------------------------------------------------- /*
+ * Task List
+/* -------------------------------------------------- */
+.wrTasks {
+  /*width: 100%;*/
+  border-top: 3px solid #69e5da;
+  margin: 50px;
+}
+
+.headerWrTasks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #edf0f5;
+  background: #fff;
+}
+
+.taskStatusTitle {
+  font-family: Montserrat_Medium;
+}
+
+.btnName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: none;
+}
+
+.fa-ellipsis-h:before {
+  font-size: 24px;
+  color: #edf0f5;
+}
+
+.btnName:focus,
+.btnName:active {
+  border: none;
+  outline: none;
+}
+
+.btnName:hover .fa-ellipsis-h:before {
+  color: #69e5da;
+}
+
+.bodyContent {
+  width: 80%;
+}
+
+.wrTask {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 15px;
+  border-top: 1px solid #edf0f5;
+  border-bottom: 1px solid #edf0f5;
+  background: #fff;
+}
+
+.wrTask:hover {
+  margin: 3px 0;
+  -webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+}
+
+/* -------------------------------------------------- /*
+ * Task
+/* -------------------------------------------------- */
+.task {
+  width: 65%;
+}
+
+/* -------------------------------------------------- /*
+ * Checkboxes
+/* -------------------------------------------------- */
+.wrTask input[type="checkbox"] {
+  display: none;
+  margin-right: 35px;
+  opacity: 0;
+}
+
+.wrTask label {
+  position: relative;
+  margin-bottom: 0;
+  margin-right: 15px;
+  margin-left: 50px;
+  cursor: pointer;
+}
+
+.wrTask label::before,
+.wrTask label::after {
+  content: "";
+  position: absolute;
+  cursor: pointer;
+}
+
+.wrTask label::before {
+  top: 50%;
+  left: -48px;
+  transform: translate(0, -50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid #69e5da;
+  border-radius: 5px;
+}
+
+.wrTask label::after {
+  top: 50%;
+  left: -45px;
+  transform: translate(0, -100%) rotate(-45deg);
+  width: 22px;
+  height: 10px;
+  border-bottom: 2px solid #69e5da;
+  border-left: 2px solid #69e5da;
+}
+
+.wrTask input[type="checkbox"] + label {
+  
+}
+
+.wrTask input[type="checkbox"] + label::after {
+  content: none;
+}
+
+.wrTask input[type="checkbox"]:checked + label::after {
+  content: "";
+}
+
+.wrTask input[type="checkbox"]:focus + label::before {
+  outline: none;
+}
+/* -------------------------------------------------- /*
+ * Checkboxes The End
+/* -------------------------------------------------- */
+
+.wrBtnTask {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrBtnTask button:first-child {
+  margin-right: 5px;
+}
+
+.btnEditTask,
+.btnDeleteTask {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: none;
+}
+
+.btnEditTask:focus,
+.btnEditTask:active,
+.btnDeleteTask:focus,
+.btnDeleteTask:active {
+  border: none;
+  outline: none;
+}
+
+.btnEditTask i.fa-edit:before,
+.btnDeleteTask i.fa-trash-alt:before {
+  font-size: 18px;
+  color: #b6c8d2;
+}
+
+.btnEditTask:hover .fa-edit:before {
+  color: #69e5da; 
+}
+
+.btnDeleteTask:hover .fa-trash-alt:before {
+  color: #ff3d3f;
+}
+
+.priorityTask {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 125px;
+}
+
+.indicatorPriority {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.highPrioruty {
+  background: #fa7974;
+}
+
+.mediumPrioruty {
+  background: #fa9e31;
+}
+
+.lowPrioruty {
+  background: #f5cb1f;
+}
+
+.labelPriority {
+  font-size: 12px;
+}
+/* -------------------------------------------------- /*
+ * Task The End
+/* -------------------------------------------------- */
+
+.wrAddTask {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /*width: 100%;*/
+  margin: 0 50px 50px;
+}
+
+.btnAddTask {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background: #69e5da;
+  font-size: 24px;
+  color: #fff;
+}
+
+.btnAddTask:hover {
+  -webkit-box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.75);
+}
+
+.btnAddTask:focus,
+.btnAddTask:active {
+  border: none;
+  outline: none;
+}
+
+/* ================================================== /*
+ * Modal Window
+/* ================================================== */
+#mWindow {
+  display: flex;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  background: #000;
+  opacity: .5;
+}
+
+.visible {
+  border-top: 3px solid #69e5da;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 101;
+  max-width: 600px;
+  width: 96%;
+  overflow: auto;
+  padding: 50px;
+  background: #fff;
+}
+
+.wrInputNewTask {
+  position: relative;
+}
+
+.wrInputNewTask i.fa-plus {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translate(0, -50%);
+}
+
+.wrInputNewTask i.fa-plus {
+  color: #b6c8d2;
+}
+
+.newTask {
+  width: 100%;
+  height: 40px;
+  border: none;
+  padding: 0 15px 0 45px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 1px 10px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 1px 10px -3px rgba(0,0,0,0.75);
+  box-shadow: 0px 1px 10px -3px rgba(0,0,0,0.75);
+}
+
+.selectPriorityTitle {
+  margin: 30px 0 10px;
+  font-family: Montserrat_Medium;
+}
+
+/* -------------------------------------------------- /*
+ * Radio Buttons
+/* -------------------------------------------------- */
+.wrPrioritySelection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrRadioPriority {
+  width: 30%;
+  text-align: center;
+}
+
+.wrRadioPriority input[type="radio"] {
+  display: none;
+  margin-right: 35px;
+  opacity: 0;
+}
+
+.wrRadioPriority label {
+  position: relative;
+  margin-bottom: 0;
+  margin-right: 15px;
+  margin-left: 50px;
+  cursor: pointer;
+}
+
+.wrRadioPriority label::before,
+.wrRadioPriority label::after {
+  content: "";
+  position: absolute;
+  cursor: pointer;
+}
+
+.wrRadioPriority label::before {
+  top: 50%;
+  left: -48px;
+  transform: translate(0, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.wrRadioPriority label::after {
+  top: 50%;
+  left: -43px;
+  transform: translate(0, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+#labelLow::before {
+  border: 2px solid #f5cb1f;
+}
+
+.wrRadioPriority label#labelLow::after {
+  background: #f5cb1f;
+}
+
+#labelMedium::before {
+  border: 2px solid #fa9e31;
+}
+
+.wrRadioPriority label#labelMedium::after {
+  background: #fa9e31;
+}
+
+#labelHigh::before {
+  border: 2px solid #fa7974;
+}
+
+.wrRadioPriority label#labelHigh::after {
+  background: #fa7974;
+}
+
+.wrRadioPriority input[type="radio"] + label {
+  
+}
+
+.wrRadioPriority input[type="radio"] + label::after {
+  content: none;
+}
+
+.wrRadioPriority input[type="radio"]:checked + label::after {
+  content: "";
+}
+
+.wrRadioPriority input[type="radio"]:focus + label::before {
+  outline: none;
+}
+/* -------------------------------------------------- /*
+ * Radio Buttons The End
+/* -------------------------------------------------- */
+
+.btnAddTaskMW {
+  width: 100%;
+  border: none;
+  border-radius: 25px;
+  margin-top: 30px;
+  padding: 5px 30px;
+  background: #69e5da;
+  font-family: Montserrat_Medium;
+  color: #fff;
+}
+
+.btnAddTaskMW:hover {
+  -webkit-box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.75);
+}
+
+.btnAddTaskMW:focus,
+.btnAddTaskMW:active {
+  border: none;
+  outline: none;
+}
+
+.btnAddTaskMW i {
+  margin-right: 15px;
+}

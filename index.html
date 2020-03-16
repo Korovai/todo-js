@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Task List</title>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="vendors/bootstrap/bootstrap.min.css">
+   
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico">
+    
+    <!-- Place your kit's code here -->
+    <script src="https://kit.fontawesome.com/3ac419ef38.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body id="bd">
+    
+    <!-- HEADER -->
+    <header>
+      <div class="wrLogo">Tasks</div>
+      <div class="wrSearch"><i class="fas fa-search"></i><input type="text" class="search" placeholder="Search task" /></div>
+    </header><!-- header the end -->
+    
+    <!-- SECTION CONTENT -->
+    <div class="content">
+      
+      <!-- SECTION LEFT-BAR -->
+      <div class="leftBar">
+        <button class="activeBtnFilter btnFilter allTasks"><i class="far fa-list-alt"></i><span>All</span></button>
+        <button class="btnFilter activeTasks"><i class="fas fa-tasks"></i><span>Active</span></button>
+        <button class="btnFilter doneTasks"><i class="fas fa-clipboard-check"></i><span>Done</span></button>
+        <button class="btnFilter priorityTasks"><i class="fas fa-sort-amount-up"></i><span>Priority</span></button>
+      </div><!-- /.leftbar the end -->
+      
+      <!-- SECTION BODY-CONTENT -->
+      <div class="bodyContent">
+        
+        <!-- SECTION START-SCREEN -->
+        <div class="startScreen">
+          <img src="images/startBackground.png" alt="Background" /> 
+          <div class="startGreeting"><span>A fresh start</span><br/>Anything to add?</div>
+          
+          <button class="btnStartAddTask"><i class="fas fa-plus"></i>Add a new task</button>
+        </div><!-- /.startscreen -->
+        
+        <!-- SECTION WRAPPER-TASK -->
+        <div class="wrTasks">
+          <div class="headerWrTasks">
+            <span class="taskStatusTitle">All Tasks</span>
+            <button class="btnName"><i class="fas fa-ellipsis-h"></i></button>
+          </div>
+          
+          <div class="wrTask">
+            <div class="task">
+              <input type="checkbox" id="checkbox1" value="" />
+              <label for="checkbox1">Need to a make wireframe and iOS app design and wireframe</label>
+            </div>
+            
+            <div class="priorityTask">
+              <div class="indicatorPriority highPrioruty"></div>
+              <span class="labelPriority">High Priority</span>
+            </div>
+            
+            <div class="wrBtnTask">
+              <button class="btnEditTask"><i class="far fa-edit"></i></button>
+              <button class="btnDeleteTask"><i class="fas fa-trash-alt"></i></button>
+            </div>
+          </div>
+          
+          <div class="wrTask">
+            <div class="task">
+              <input type="checkbox" id="checkbox2" value="" />
+              <label for="checkbox2">Video Apps Redesign</label>
+            </div>
+            
+            <div class="priorityTask">
+              <div class="indicatorPriority mediumPrioruty"></div>
+              <span class="labelPriority">Medium Priority</span>
+            </div>
+            
+            <div class="wrBtnTask">
+              <button class="btnEditTask"><i class="far fa-edit"></i></button>
+              <button class="btnDeleteTask"><i class="fas fa-trash-alt"></i></button>
+            </div>
+          </div>
+          
+          <div class="wrTask">
+            <div class="task">
+              <input type="checkbox" id="checkbox3" value="" />
+              <label for="checkbox3">Website design</label>
+            </div>
+            
+            <div class="priorityTask">
+              <div class="indicatorPriority lowPrioruty"></div>
+              <span class="labelPriority">Low Priority</span>
+            </div>
+            
+            <div class="wrBtnTask">
+              <button class="btnEditTask"><i class="far fa-edit"></i></button>
+              <button class="btnDeleteTask"><i class="fas fa-trash-alt"></i></button>
+            </div>
+          </div>
+        </div><!-- /.wrTasks the end -->
+        
+        <!-- SECTION WRAPPER-ADD-TASK -->
+        <div class="wrAddTask">
+          <button onclick="getElementById('mWindow').removeAttribute('style'); getElementById('bd').style.overflow='hidden';" style="visibility: visible; animation-delay: 0.5s; animation-name: flipInY;" class="btnAddTask"><i class="fas fa-plus"></i></button>
+        </div><!-- /.wrAddTask -->
+      </div><!-- /.bodyContent the end -->
+    </div><!-- /.content the end -->
+    
+    <!-- MODAL-WINDOW -->
+    <div id="mWindow" style="display: none;">
+      <div onclick="getElementById('mWindow').style.display='none'; getElementById('bd').style.overflow='auto'" class="overlay"></div>
+      <form class="visible form" role="form">
+        <div class="wrInputNewTask"><i class="fas fa-plus"></i><input type="text" class="newTask" placeholder="Enter new task" /></div>
+        <div class="selectPriorityTitle">Select priority:</div>
+        <div class="wrPrioritySelection">
+          <div class="wrRadioPriority">
+            <input type="radio" id="radio1" name="priority" value="low" checked />
+            <label id="labelLow" for="radio1">Low</label>
+          </div> 
+          
+          <div class="wrRadioPriority">
+            <input type="radio" id="radio2" name="priority" value="medium" />
+            <label id="labelMedium" for="radio2">Medium</label>
+          </div>
+          
+          <div class="wrRadioPriority">
+            <input type="radio" id="radio3" name="priority" value="high" />
+            <label id="labelHigh" for="radio3">High</label>
+          </div>
+        </div>
+        
+        <button class="btnAddTaskMW"><i class="fas fa-plus"></i>Add a new task</button>
+      </form>
+    </div><!-- modal window the end -->
+  	
+  	<!-- SYSTEMS SCRIPTS -->
+    <script src="vendors/bootstrap/bootstrap.min.js"></script>
+    
+    <!-- CUSTOM SCRIPTS -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
