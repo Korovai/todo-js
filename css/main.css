@@ -2,42 +2,6 @@
  * Typography
 /* ================================================== */
 @font-face {
-  font-family: 'Gilroy_Light';
-  src: url('../fonts/Gilroy/Gilroy_Light.svg#Gilroy_Light') format('svg'),
-       url('../fonts/Gilroy/Gilroy_Light.ttf') format('truetype'),
-       url('../fonts/Gilroy/Gilroy_Light.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Gilroy_Light';
-  src: url('../fonts/Gilroy/Gilroy_Light.eot');
-  src: url('../fonts/Gilroy/Gilroy_Light.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/Gilroy/Gilroy_Light.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Gilroy_Bold';
-  src: url('../fonts/Gilroy/Gilroy_Bold.svg#Gilroy_Bold') format('svg'),
-       url('../fonts/Gilroy/Gilroy_Bold.ttf') format('truetype'),
-       url('../fonts/Gilroy/Gilroy_Bold.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Gilroy_Bold';
-  src: url('../fonts/Gilroy/Gilroy_Bold.eot');
-  src: url('../fonts/Gilroy/Gilroy_Bold.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/Gilroy/Gilroy_Bold.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: 'Gilroy_ExtraBold';
   src: url('../fonts/Gilroy/Gilroy_ExtraBold.svg#Gilroy_ExtraBold') format('svg'),
        url('../fonts/Gilroy/Gilroy_ExtraBold.ttf') format('truetype'),
@@ -117,6 +81,7 @@ body {
   font-size: 16px;
   font-family: Montserrat_Regular;
   color: #606060;
+  user-select: none;
 }
 
 /* ================================================== /*
@@ -126,7 +91,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  width: 60%;
+  width: 65%;
   height: 100px;
   margin: 0 auto;
   background: #fff;
@@ -138,11 +103,12 @@ header {
   align-items: center;
   width: 20%;
   border: 1px solid #edf0f5;
+  border-top: 3px solid #69e5da;
+  padding: 0 3px;
   text-align: center;
-  font-size: 32px;
+  font-size: 2rem;
   font-family: Gilroy_ExtraBold;
   text-transform: uppercase;
-  user-select: none;
 }
 
 .wrSearch {
@@ -153,7 +119,7 @@ header {
   width: 80%;
   height: 100%;
   border: 1px solid #edf0f5;
-  padding: 0 15px
+  border-top: 3px solid #69e5da;
 }
 
 .wrSearch i.fa-search { 
@@ -166,18 +132,26 @@ header {
 }
 
 .wrSearch i.fa-search {
+  font-size: 1rem;
   color: #b6c8d2;
+  cursor: pointer;
+}
+
+.wrSearch i.fa-search:hover {
+  color: #69e5da;
 }
 
 .search {
   width: 100%;
   height: 40px;
   border: none;
+  margin: 0 15px;
   padding: 0 15px 0 45px;
   border-radius: 5px;
-  -webkit-box-shadow: 0px 1px 10px -3px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 1px 10px -3px rgba(0,0,0,0.75);
-  box-shadow: 0px 1px 10px -3px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 1px 5px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 1px 5px -3px rgba(0,0,0,0.75);
+  box-shadow: 0px 1px 5px -3px rgba(0,0,0,0.75);
+  font-size: 0.875rem;
 }
 
 /* ================================================== /*
@@ -187,9 +161,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  width: 60%;
+  width: 65%;
   margin: 0 auto;
-  user-select: none;
 }
 
 /* -------------------------------------------------- /*
@@ -198,6 +171,8 @@ header {
 .leftBar {
   max-width: 256px;
   width: 20%;
+  border: 1px solid #edf0f5;
+  padding: 0 3px;
   background: #fff;
 }
 
@@ -207,34 +182,46 @@ header {
   justify-content: center;
   align-items: center;
   width: 100%;
-  border: none;
-  border-top: 1px solid #edf0f5;
-  border-bottom: 1px solid #edf0f5;
+  border: 1px solid #edf0f5;
+  margin: 1px 0;
   padding: 30px 15px;
   background: #fff;
+  font-size: 0.875rem;
   color: #606060;
+  cursor: pointer;
 }
 
 .btnFilter i {
   margin-bottom: 10px;
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 .btnFilter:hover,
 .activeBtnFilter {
+  border: none;
+  outline: none;
   background: #69e5da;
   font-family: Montserrat_Medium;
   color: #fff;
+}
+
+.btnFilter:active,
+.btnFilter:focus {
+  border: none;
+  outline: none;
 }
 
 /* -------------------------------------------------- /*
  * Body Content
 /* -------------------------------------------------- */
 .bodyContent {
-  display: flex;
   flex-direction: column;
-  /*background: #fff;*/
-  background: #edf0f5;
+  width: 80%;
+  border: 1px solid #edf0f5;
+  background: #fff;
+  -webkit-box-shadow: inset 0px 0px 5px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 0px 5px -3px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 0px 5px -3px rgba(0,0,0,0.75);
 }
 
 /* -------------------------------------------------- /*
@@ -247,7 +234,6 @@ header {
   align-items: center;
   width: 100%;
   padding: 50px 0;
-  display: none;
 }
 
 .startScreen img {
@@ -264,78 +250,94 @@ header {
   font-family: Montserrat_Bold;
 }
 
-.btnStartAddTask {
+.btnStart {
   border: none;
   border-radius: 25px;
   padding: 15px 30px;
   background: #69e5da;
+  font-size: 1rem;
   font-family: Montserrat_Medium;
   color: #fff;
+  cursor: pointer;
 }
 
-.btnStartAddTask:hover {
+.btnStart:hover {
   -webkit-box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.75);
 }
 
-.btnStartAddTask i {
+.btnStart:active,
+.btnStart:focus {
+  border: none;
+  outline: none;
+}
+
+.btnStart i.fa-plus {
+  font-size: 1rem;
   margin-right: 15px;
 }
 /* -------------------------------------------------- /*
  * Start Screen The End
 /* -------------------------------------------------- */
 
-/* -------------------------------------------------- /*
- * Task List
-/* -------------------------------------------------- */
 .wrTasks {
-  /*width: 100%;*/
+  display: none;
   border-top: 3px solid #69e5da;
   margin: 50px;
 }
 
-.headerWrTasks {
+.wrHeaderTasks {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
   border-bottom: 1px solid #edf0f5;
+  padding: 15px;
   background: #fff;
 }
 
 .taskStatusTitle {
+  font-size: 1rem;
   font-family: Montserrat_Medium;
 }
 
-.btnName {
+.btnOpenAddForm {
   display: flex;
   justify-content: center;
   align-items: center;
   border: none;
   background: none;
+  font-size: 0.875rem;
+  color: #b6c8d2;
 }
 
-.fa-ellipsis-h:before {
-  font-size: 24px;
-  color: #edf0f5;
+.btnOpenAddForm i.fa-plus {
+  margin-right: 5px;
+  font-size: 0.75rem;
+  color: #b6c8d2;
 }
 
-.btnName:focus,
-.btnName:active {
+.btnOpenAddForm:hover,
+.btnOpenAddForm:hover i.fa-plus {
+  color: #69e5da;
+  cursor: pointer;
+}
+
+.btnOpenAddForm:focus,
+.btnOpenAddForm:active {
   border: none;
   outline: none;
 }
 
-.btnName:hover .fa-ellipsis-h:before {
-  color: #69e5da;
+/* -------------------------------------------------- /*
+ * Task List
+/* -------------------------------------------------- */
+ul.taskList {
+  margin: 0;
+  padding: 0;
 }
 
-.bodyContent {
-  width: 80%;
-}
-
-.wrTask {
+li.wrTask {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -345,45 +347,48 @@ header {
   background: #fff;
 }
 
-.wrTask:hover {
+li.wrTask:hover {
   margin: 3px 0;
   -webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
 }
 
-/* -------------------------------------------------- /*
- * Task
-/* -------------------------------------------------- */
-.task {
+.taskName {
   width: 65%;
 }
 
 /* -------------------------------------------------- /*
  * Checkboxes
 /* -------------------------------------------------- */
-.wrTask input[type="checkbox"] {
+li.wrTask input[type="checkbox"] {
   display: none;
   margin-right: 35px;
   opacity: 0;
 }
 
-.wrTask label {
+li.wrTask label {
+  display: block;
   position: relative;
   margin-bottom: 0;
   margin-right: 15px;
   margin-left: 50px;
+  font-size: 1rem;
   cursor: pointer;
 }
 
-.wrTask label::before,
-.wrTask label::after {
+li.activeCheck label {
+  text-decoration: line-through;
+}
+
+li.wrTask label::before,
+li.wrTask label::after {
   content: "";
   position: absolute;
   cursor: pointer;
 }
 
-.wrTask label::before {
+li.wrTask label::before {
   top: 50%;
   left: -48px;
   transform: translate(0, -50%);
@@ -393,7 +398,7 @@ header {
   border-radius: 5px;
 }
 
-.wrTask label::after {
+li.wrTask label::after {
   top: 50%;
   left: -45px;
   transform: translate(0, -100%) rotate(-45deg);
@@ -403,24 +408,59 @@ header {
   border-left: 2px solid #69e5da;
 }
 
-.wrTask input[type="checkbox"] + label {
-  
-}
-
-.wrTask input[type="checkbox"] + label::after {
+li.wrTask input[type="checkbox"] + label::after {
   content: none;
 }
 
-.wrTask input[type="checkbox"]:checked + label::after {
+li.activeCheck input[type="checkbox"]:checked + label::after,
+li.activeCheck input[type="checkbox"] + label::after {
   content: "";
 }
 
-.wrTask input[type="checkbox"]:focus + label::before {
+li.wrTask input[type="checkbox"]:focus + label::before {
   outline: none;
 }
 /* -------------------------------------------------- /*
  * Checkboxes The End
 /* -------------------------------------------------- */
+
+.priorityTask {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 125px;
+}
+
+.indicatorPriority {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.highPriority {
+  background: #fa7974;
+}
+
+.mediumPriority {
+  background: #fa9e31;
+}
+
+.lowPriority {
+  background: #f5cb1f;
+}
+
+li.activeCheck .indicatorPriority {
+  background: #b6c8d2;
+}
+
+.labelPriority {
+  font-size: 0.75rem;
+}
+
+li.activeCheck .labelPriority {
+  text-decoration: line-through;
+}
 
 .wrBtnTask {
   display: flex;
@@ -439,6 +479,7 @@ header {
   align-items: center;
   border: none;
   background: none;
+  cursor: pointer;
 }
 
 .btnEditTask:focus,
@@ -449,9 +490,9 @@ header {
   outline: none;
 }
 
-.btnEditTask i.fa-edit:before,
-.btnDeleteTask i.fa-trash-alt:before {
-  font-size: 18px;
+.btnEditTask i.fa-edit,
+.btnDeleteTask i.fa-trash-alt {
+  font-size: 1.125rem;
   color: #b6c8d2;
 }
 
@@ -463,77 +504,16 @@ header {
   color: #ff3d3f;
 }
 
-.priorityTask {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 125px;
-}
-
-.indicatorPriority {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  margin-right: 15px;
-}
-
-.highPrioruty {
-  background: #fa7974;
-}
-
-.mediumPrioruty {
-  background: #fa9e31;
-}
-
-.lowPrioruty {
-  background: #f5cb1f;
-}
-
-.labelPriority {
-  font-size: 12px;
-}
-/* -------------------------------------------------- /*
- * Task The End
-/* -------------------------------------------------- */
-
-.wrAddTask {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  /*width: 100%;*/
-  margin: 0 50px 50px;
-}
-
-.btnAddTask {
-  width: 60px;
-  height: 60px;
-  border: none;
-  border-radius: 50%;
-  background: #69e5da;
-  font-size: 24px;
-  color: #fff;
-}
-
-.btnAddTask:hover {
-  -webkit-box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.75);
-  box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.75);
-}
-
-.btnAddTask:focus,
-.btnAddTask:active {
-  border: none;
-  outline: none;
-}
-
 /* ================================================== /*
- * Modal Window
+ * Add Form & Edit Form
 /* ================================================== */
-#mWindow {
+#addForm,
+#editForm {
   display: flex;
 }
 
-.overlay {
+.overlayAddForm,
+.overlayEditForm {
   position: fixed;
   top: 0;
   left: 0;
@@ -544,7 +524,8 @@ header {
   opacity: .5;
 }
 
-.visible {
+.visibleAddForm,
+.visibleEditForm {
   border-top: 3px solid #69e5da;
   position: fixed;
   top: 50%;
@@ -558,22 +539,24 @@ header {
   background: #fff;
 }
 
-.wrInputNewTask {
+.wrInputNewTask,
+.wrInputEditTask {
+  display: flex;
   position: relative;
 }
 
-.wrInputNewTask i.fa-plus {
+.wrInputNewTask i.fa-plus,
+.wrInputEditTask i.fa-edit {
   position: absolute;
   top: 50%;
   left: 15px;
   transform: translate(0, -50%);
-}
-
-.wrInputNewTask i.fa-plus {
+  font-size: 1rem;
   color: #b6c8d2;
 }
 
-.newTask {
+.newTaskName,
+.editTaskName {
   width: 100%;
   height: 40px;
   border: none;
@@ -582,6 +565,7 @@ header {
   -webkit-box-shadow: 0px 1px 10px -3px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 1px 10px -3px rgba(0,0,0,0.75);
   box-shadow: 0px 1px 10px -3px rgba(0,0,0,0.75);
+  font-size: 0.875rem;
 }
 
 .selectPriorityTitle {
@@ -611,9 +595,7 @@ header {
 
 .wrRadioPriority label {
   position: relative;
-  margin-bottom: 0;
-  margin-right: 15px;
-  margin-left: 50px;
+  margin: 0 15px 0 50px;
   cursor: pointer;
 }
 
@@ -626,7 +608,7 @@ header {
 
 .wrRadioPriority label::before {
   top: 50%;
-  left: -48px;
+  left: -50px;
   transform: translate(0, -50%);
   width: 20px;
   height: 20px;
@@ -646,7 +628,7 @@ header {
   border: 2px solid #f5cb1f;
 }
 
-.wrRadioPriority label#labelLow::after {
+.wrRadioPriority #labelLow::after {
   background: #f5cb1f;
 }
 
@@ -654,7 +636,7 @@ header {
   border: 2px solid #fa9e31;
 }
 
-.wrRadioPriority label#labelMedium::after {
+.wrRadioPriority #labelMedium::after {
   background: #fa9e31;
 }
 
@@ -662,7 +644,7 @@ header {
   border: 2px solid #fa7974;
 }
 
-.wrRadioPriority label#labelHigh::after {
+.wrRadioPriority #labelHigh::after {
   background: #fa7974;
 }
 
@@ -685,29 +667,237 @@ header {
  * Radio Buttons The End
 /* -------------------------------------------------- */
 
-.btnAddTaskMW {
+.btnAddTask,
+.btnAcceptEditing {
   width: 100%;
   border: none;
   border-radius: 25px;
   margin-top: 30px;
-  padding: 5px 30px;
+  padding: 8px 30px;
   background: #69e5da;
+  font-size: 1rem;
   font-family: Montserrat_Medium;
   color: #fff;
+  cursor: pointer;
 }
 
-.btnAddTaskMW:hover {
+.btnAddTask:hover,
+.btnAcceptEditing:hover {
   -webkit-box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.75);
   box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.75);
 }
 
-.btnAddTaskMW:focus,
-.btnAddTaskMW:active {
+.btnAddTask:focus,
+.btnAddTask:active,
+.btnAcceptEditing:focus,
+.btnAcceptEditing:active {
   border: none;
   outline: none;
 }
 
-.btnAddTaskMW i {
+.btnAddTask i.fa-plus,
+.btnAcceptEditing i.fa-check {
   margin-right: 15px;
+  font-size: 1rem;
+}
+
+/* ================================================== /*
+ * @MEDIA SCREEN AND (max-width:1439px)
+/* ================================================== */
+@media screen and (max-width:1439px) {
+  
+  header,
+  .content {
+    width: 70%;
+  }
+  
+  .wrTasks {
+    margin: 30px;
+  }
+}
+
+/* ================================================== /*
+ * @MEDIA SCREEN AND (max-width:1339px)
+/* ================================================== */
+@media screen and (max-width:1339px) {
+  
+  header,
+  .content {
+    width: 75%;
+  }
+}
+
+/* ================================================== /*
+ * @MEDIA SCREEN AND (max-width:1199px)
+/* ================================================== */
+@media screen and (max-width:1199px) {
+  
+  header,
+  .content {
+    width: 85%;
+  }
+}
+
+/* ================================================== /*
+ * @MEDIA SCREEN AND (max-width:991px)
+/* ================================================== */
+@media screen and (max-width: 991px) {
+  
+  body {
+    margin: 0;
+  }
+  
+  header,
+  .content {
+    width: 100%;
+  }
+  
+  .wrLogo {
+    border: none;
+    border-top: 3px solid #69e5da;
+    padding: 0;
+  }
+  
+  .wrSearch {
+    height: auto;
+    border: none;
+    border-top: 3px solid #69e5da;
+  }
+  
+  .btnFilter {
+    padding: 15px;
+  }
+  
+  .content {
+    flex-direction: column;
+  }
+  
+  .leftBar {
+    display: flex;
+    max-width: 100%;
+    width: 100%;
+    border: none;
+    padding: 0;
+  }
+  
+  .bodyContent {
+    width: 100%;
+    border: none;
+  }
+  
+  .visibleAddForm, 
+  .visibleEditForm {
+    max-width: 400px;
+  }
+  
+  .wrPrioritySelection {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .wrRadioPriority {
+    width: 100%;
+    margin: 10px 0;
+    text-align: left
+  }
+}
+
+/* ================================================== /*
+ * @MEDIA SCREEN AND (max-width:667px)
+/* ================================================== */
+@media screen and (max-width: 667px) {
+
+  header {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .wrLogo {
+    width: 100%;
+    padding: 15px 0 0 0;
+  }
+  
+  .wrSearch {
+    width: 100%;
+    border: none;
+    margin: 15px 0;
+  }
+  
+  .wrTasks {
+    margin: 15px;
+  }
+  
+  li.wrTask {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+  }
+  
+  .taskName {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .taskName {
+    width: 100%;
+    margin: 10px 0;
+  }
+  
+  .priorityTask,
+  .wrBtnTask {
+    width: 50%;
+    margin: 10px 0;
+  }
+  
+  li.wrTask label {
+    width: 100%;
+    margin: 0;
+    padding-left: 50px;
+  }
+  
+  li.wrTask label::before {
+    left: 0;
+  }
+  
+  li.wrTask label::after {
+    left: 3px;
+  }
+  
+  .priorityTask {
+    justify-content: center;
+  }
+  
+  .visibleAddForm, 
+  .visibleEditForm {
+    width: 70%;
+  }
+}
+
+/* ================================================== /*
+ * @MEDIA SCREEN AND (max-width:467px)
+/* ================================================== */
+@media screen and (max-width: 467px) {
+  
+  .btnFilter i {
+    font-size: 1.125rem;
+  }
+  
+  .taskStatusTitle {
+    font-size: 0.875rem;
+  }
+  
+  li.wrTask {
+    padding: 5px 15px;
+  }
+  
+  li.wrTask label {
+    font-size: 0.875rem;
+  }
+  
+  .visibleAddForm, 
+  .visibleEditForm {
+    padding: 30px;
+  }
 }

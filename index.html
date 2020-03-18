@@ -12,9 +12,6 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="vendors/bootstrap/bootstrap.min.css">
    
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -29,7 +26,7 @@
     <!-- HEADER -->
     <header>
       <div class="wrLogo">Tasks</div>
-      <div class="wrSearch"><i class="fas fa-search"></i><input type="text" class="search" placeholder="Search task" /></div>
+      <div class="wrSearch"><i class="fas fa-search"></i><input type="text" class="search" placeholder="Task search" /></div>
     </header><!-- header the end -->
     
     <!-- SECTION CONTENT -->
@@ -37,10 +34,10 @@
       
       <!-- SECTION LEFT-BAR -->
       <div class="leftBar">
-        <button class="activeBtnFilter btnFilter allTasks"><i class="far fa-list-alt"></i><span>All</span></button>
-        <button class="btnFilter activeTasks"><i class="fas fa-tasks"></i><span>Active</span></button>
-        <button class="btnFilter doneTasks"><i class="fas fa-clipboard-check"></i><span>Done</span></button>
-        <button class="btnFilter priorityTasks"><i class="fas fa-sort-amount-up"></i><span>Priority</span></button>
+        <button class="btnFilter allTasks activeBtnFilter" data="all"><i class="far fa-list-alt" data="all"></i><span>All</span></button>
+        <button class="btnFilter activeTasks" data="active"><i class="fas fa-tasks" data="active"></i><span>Active</span></button>
+        <button class="btnFilter doneTasks" data="done"><i class="fas fa-clipboard-check" data="done"></i><span>Done</span></button>
+        <button class="btnFilter priorityTasks" data="priority"><i class="fas fa-sort-amount-up" data="priority"></i><span>Priority</span></button>
       </div><!-- /.leftbar the end -->
       
       <!-- SECTION BODY-CONTENT -->
@@ -51,84 +48,31 @@
           <img src="images/startBackground.png" alt="Background" /> 
           <div class="startGreeting"><span>A fresh start</span><br/>Anything to add?</div>
           
-          <button class="btnStartAddTask"><i class="fas fa-plus"></i>Add a new task</button>
+          <button class="btnStart"><i class="fas fa-plus"></i>Add a new task</button>
         </div><!-- /.startscreen -->
         
         <!-- SECTION WRAPPER-TASK -->
         <div class="wrTasks">
-          <div class="headerWrTasks">
+          <div class="wrHeaderTasks">
             <span class="taskStatusTitle">All Tasks</span>
-            <button class="btnName"><i class="fas fa-ellipsis-h"></i></button>
+            <button class="btnOpenAddForm"><i class="fas fa-plus"></i>Add Task</button>
           </div>
           
-          <div class="wrTask">
-            <div class="task">
-              <input type="checkbox" id="checkbox1" value="" />
-              <label for="checkbox1">Need to a make wireframe and iOS app design and wireframe</label>
-            </div>
-            
-            <div class="priorityTask">
-              <div class="indicatorPriority highPrioruty"></div>
-              <span class="labelPriority">High Priority</span>
-            </div>
-            
-            <div class="wrBtnTask">
-              <button class="btnEditTask"><i class="far fa-edit"></i></button>
-              <button class="btnDeleteTask"><i class="fas fa-trash-alt"></i></button>
-            </div>
-          </div>
-          
-          <div class="wrTask">
-            <div class="task">
-              <input type="checkbox" id="checkbox2" value="" />
-              <label for="checkbox2">Video Apps Redesign</label>
-            </div>
-            
-            <div class="priorityTask">
-              <div class="indicatorPriority mediumPrioruty"></div>
-              <span class="labelPriority">Medium Priority</span>
-            </div>
-            
-            <div class="wrBtnTask">
-              <button class="btnEditTask"><i class="far fa-edit"></i></button>
-              <button class="btnDeleteTask"><i class="fas fa-trash-alt"></i></button>
-            </div>
-          </div>
-          
-          <div class="wrTask">
-            <div class="task">
-              <input type="checkbox" id="checkbox3" value="" />
-              <label for="checkbox3">Website design</label>
-            </div>
-            
-            <div class="priorityTask">
-              <div class="indicatorPriority lowPrioruty"></div>
-              <span class="labelPriority">Low Priority</span>
-            </div>
-            
-            <div class="wrBtnTask">
-              <button class="btnEditTask"><i class="far fa-edit"></i></button>
-              <button class="btnDeleteTask"><i class="fas fa-trash-alt"></i></button>
-            </div>
-          </div>
+          <ul class="taskList"></ul>
+
         </div><!-- /.wrTasks the end -->
-        
-        <!-- SECTION WRAPPER-ADD-TASK -->
-        <div class="wrAddTask">
-          <button onclick="getElementById('mWindow').removeAttribute('style'); getElementById('bd').style.overflow='hidden';" style="visibility: visible; animation-delay: 0.5s; animation-name: flipInY;" class="btnAddTask"><i class="fas fa-plus"></i></button>
-        </div><!-- /.wrAddTask -->
       </div><!-- /.bodyContent the end -->
     </div><!-- /.content the end -->
     
-    <!-- MODAL-WINDOW -->
-    <div id="mWindow" style="display: none;">
-      <div onclick="getElementById('mWindow').style.display='none'; getElementById('bd').style.overflow='auto'" class="overlay"></div>
-      <form class="visible form" role="form">
-        <div class="wrInputNewTask"><i class="fas fa-plus"></i><input type="text" class="newTask" placeholder="Enter new task" /></div>
+    <!-- ADD FORM -->
+    <div id="addForm" style="display: none;">
+      <div class="overlayAddForm"></div>
+      <div class="visibleAddForm form" role="form">
+        <div class="wrInputNewTask"><i class="fas fa-plus"></i><input type="text" class="newTaskName" placeholder="Enter a new task name" /></div>
         <div class="selectPriorityTitle">Select priority:</div>
         <div class="wrPrioritySelection">
           <div class="wrRadioPriority">
-            <input type="radio" id="radio1" name="priority" value="low" checked />
+            <input type="radio" id="radio1" name="priority" value="low" />
             <label id="labelLow" for="radio1">Low</label>
           </div> 
           
@@ -143,12 +87,19 @@
           </div>
         </div>
         
-        <button class="btnAddTaskMW"><i class="fas fa-plus"></i>Add a new task</button>
-      </form>
-    </div><!-- modal window the end -->
-  	
-  	<!-- SYSTEMS SCRIPTS -->
-    <script src="vendors/bootstrap/bootstrap.min.js"></script>
+        <button class="btnAddTask" disabled><i class="fas fa-plus"></i>Add a new task</button>
+      </div>
+    </div><!-- add form the end -->
+    
+    <!-- Edit FORM -->
+    <div id="editForm" style="display: none;">
+      <div class="overlayEditForm"></div>
+      <div class="visibleEditForm form" role="form">
+        <div class="wrInputEditTask"><i class="far fa-edit"></i><input type="text" class="editTaskName" placeholder="Enter a new task name" /></div>
+
+        <button class="btnAcceptEditing" disabled><i class="fas fa-check"></i>Edit task</button>
+      </div>
+    </div><!-- edit form the end -->
     
     <!-- CUSTOM SCRIPTS -->
     <script src="js/main.js"></script>
